@@ -1583,7 +1583,7 @@
                 <td>
                   카드 구성: <b>[카테고리배지]</b> 게시글 제목 / 닉네임 · 시간 · 댓글수 · 조회수<br>
                   분실물 카드: 카테고리배지 옆에 상태배지 추가 (<b>[찾는중]</b> / <b>[해결됨]</b>).<br>
-                  해결됨 카드는 피드 하단으로 이동 + 흐림 처리(55%). 기본 정렬: 최신순.
+                  해결됨 카드는 피드 하단으로 이동 + 필요시 흐림 처리(55%). 기본 정렬: 최신순.
                 </td>
                 <td class="spec-note">최신순<br>정렬</td>
               </tr>
@@ -1592,7 +1592,6 @@
                 <td class="item-name">핀카드<br>(건물공지)</td>
                 <td>
                   <b>전체 탭</b>에서만 노출. 피드 최상단에 최신 건물공지 1건 고정.<br>
-                  스타일: 배경 <code style="font-size:9px; background:var(--gray-bg); padding:1px 3px; border-radius:2px;">#EFF4FF</code> / 테두리 <code style="font-size:9px; background:var(--gray-bg); padding:1px 3px; border-radius:2px;">#C5D8FF 1.5px</code> / &#128204; 아이콘 + 건물공지 레이블 강조.<br>
                   건물공지가 <b>없을 때</b> 핀카드 미노출 (S02). <b>건물공지 탭</b> 진입 시 핀카드 미노출.
                 </td>
                 <td class="spec-note">S01 전용<br>전체 탭</td>
@@ -2257,8 +2256,7 @@
                 <td class="item-name">T02 · 공지 2건<br>도트 인디케이터</td>
                 <td>
                   건물공지가 <b>2건</b>인 경우: 카드 우측 상단 <b>"n / 2"</b> 카운터 + 하단 <b>도트 2개</b> (● ○) 노출.<br>
-                  도트 색상: 현재 페이지 <code style="font-size:10px;background:var(--gray-bg);padding:1px 3px;">#1565C0</code> / 비활성 <code style="font-size:10px;background:var(--gray-bg);padding:1px 3px;">#C5D8FF</code>.<br>
-                  좌우 스와이프로 수동 전환. <b>자동 루프 없음.</b>
+                  4초 간격 자동 스와이프 루프</b>
                 </td>
                 <td class="spec-note">도트 2개<br>스와이프만<br>자동 루프 ✕</td>
               </tr>
@@ -2267,8 +2265,8 @@
                 <td class="item-name">T03 · 공지 3건+<br>자동 루프</td>
                 <td>
                   건물공지가 <b>3건 이상</b>인 경우: <b>"n / N"</b> 카운터 + 도트 인디케이터 동시 노출.<br>
-                  도트 최대 표시 3개 — 4건 이상은 세 번째 도트 뒤에 소형 점(반투명 55%) 추가로 "더 있음" 표현.<br>
-                  <b>4초 간격 자동 루프</b> (마지막 건 → 첫 번째 건 순환).<br>
+                  도트 최대 표시 3개<br>
+                  <b>4초 간격 자동 스와이프 루프</b> (마지막 건 → 첫 번째 건 순환).<br>
                   좌우 스와이프 수동 전환 가능. 수동 전환 시 <b>4초 타이머 리셋</b>.<br>
                   카드 영역 탭 → 해당 게시글 상세 진입 (루프 타이머 별도 중지 처리 불필요).
                 </td>
@@ -2444,7 +2442,7 @@
               <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.4); z-index:10; display:flex; align-items:flex-end;">
                 <div style="background:#fff; border-radius:14px 14px 0 0; width:100%; padding:8px 0 10px;">
                   <div style="width:30px; height:3px; background:var(--gray-lt); border-radius:2px; margin:0 auto 8px;"></div>
-                  <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--blue); border-bottom:1px solid var(--gray-lt);">✏️ 수정</div>
+                  <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--blue); border-bottom:1px solid var(--gray-lt);"> 수정</div>
                   <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--red); border-bottom:1px solid var(--gray-lt);">🗑 삭제</div>
                   <div style="padding:8px 14px; font-size:9px; color:var(--gray-md);">취소</div>
                 </div>
@@ -2521,7 +2519,7 @@
               <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.45); z-index:10; display:flex; align-items:flex-end;">
                 <div style="background:#fff; border-radius:14px 14px 0 0; width:100%; padding:8px 0 10px;">
                   <div style="width:30px; height:3px; background:var(--gray-lt); border-radius:2px; margin:0 auto 8px;"></div>
-                  <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--red); border-bottom:1px solid var(--gray-lt);">🚨 신고하기 → UFMDS01580U 진입</div>
+                  <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--red); border-bottom:1px solid var(--gray-lt);"> 신고하기 → UFMDS01580U 진입</div>
                   <div style="padding:8px 14px; font-size:9px; color:var(--gray-md);">취소</div>
                 </div>
               </div>
@@ -2642,10 +2640,10 @@
                 <td class="item-name">더보기 메뉴(⋯)<br>구성</td>
                 <td>
                   헤더 우측 ⋯ 버튼 탭 → 바텀시트.<br>
-                  <b>내 게시글</b>: ✏️ 수정 / 🗑 삭제 (S01 와이어프레임 바텀시트 참조).<br>
-                  <b>타인 게시글</b>: 🚨 신고하기만 노출 (S02).<br>
+                  <b>내 게시글</b>:  수정 / 🗑 삭제 (S01 와이어프레임 바텀시트 참조).<br>
+                  <b>타인 게시글</b>:  신고하기만 노출 (S02).<br>
                   삭제 탭 → 확인 팝업 → 확인 시 삭제 후 목록 복귀.<br>
-                  <b>건물공지</b>(건물 관리자·앱 관리자): ✏️ 수정 / 🗑 삭제.
+                  <b>건물공지</b>(건물 관리자·앱 관리자):  수정 / 🗑 삭제.
                 </td>
                 <td>S01/S02<br>S03</td>
               </tr>
@@ -2656,7 +2654,7 @@
                   게시글 본문 바로 아래 가로 바 노출:<br>
                   <b>좌측</b>: ♥ 좋아요 아이콘 + 좋아요 수 (탭 시 토글).<br>
                   <b>우측</b>: 댓글 수 • 조회 수 • <span style="color:var(--red);">신고하기</span> • <span style="color:var(--gray-md);">🟡공유하기</span> 순 나열.<br>
-                  <b>신고하기</b> 탭 시: 바텀시트 → "🚨 신고하기 → 신고화면(01580U) 진입" (S02 이미지 참조).<br>
+                  <b>신고하기</b> 탭 시: 바텀시트 → " 신고하기 → 신고화면(01580U) 진입" (S02 이미지 참조).<br>
                   <b>공유하기</b>: 카카오톡 공유 연동.
                 </td>
                 <td>S01/S02</td>
@@ -2667,7 +2665,7 @@
                 <td>
                   댓글 입력란 오른쪽에 <b>[등록]</b> 버튼 노출 (기본).<br>
                   내 댓글 수정 모드 진입 시 버튼 텍스트 → <b>[수정]</b> 으로 전환.<br>
-                  입력 없이 탭 시: 버튼 비활성(회색). 1자 이상 입력 시 활성(핑크).
+                  입력 없이 탭 시: 버튼 비활성(회색). 1자 이상 입력 시 활성.
                 </td>
                 <td>S01–S03</td>
               </tr>
@@ -2676,7 +2674,7 @@
                 <td class="item-name">건물공지<br>핀 배지 스타일</td>
                 <td>
                   헤더: 네이비 배경 + 흰색 텍스트 (일반 헤더와 시각 구분).<br>
-                  제목 상단: 📌 아이콘 + [공지] 배지 병기. 제목 영역 배경 #EFF4FF 처리.
+                  제목 상단: 📌 아이콘 + [공지] 배지 병기.
                 </td>
                 <td>S03</td>
               </tr>
@@ -2695,7 +2693,6 @@
                 <td class="item-name">분실물<br>해결됨 표시</td>
                 <td>
                   분실물 게시글: 제목 옆 배지가 <b>[찾는중]</b>(주황) → <b>[해결됨]</b>(회색)으로 전환됨을 목록에서 표시.<br>
-                  상세 화면에서는 배지 색상 변경 + 본문 영역 흐림 처리(50%).<br>
                   단방향 전환 — 해결됨 → 찾는중 복구 불가.<br>
                   <span style="color:var(--red);">버튼 별도 노출 없음</span> — 상태 변경은 글 수정(UFMDS01530U)을 통해 처리.
                 </td>
@@ -3157,8 +3154,8 @@
                 <td class="item-name">댓글<br>조건부 렌더링</td>
                 <td>
                   <b>댓글 있음 (S06)</b>: 댓글 목록 + 하단 입력란.<br>
-                  <b>댓글 없음 (S07)</b>: 💬 아이콘 + "첫 댓글을 남겨보세요" 안내 + 입력란 placeholder <b>"첫 댓글 작성하기"</b> (핑크 강조).<br>
-                  <b>댓글 미허용 (S08)</b>: 🚫 아이콘 + "댓글이 허용되지 않은 게시글입니다." + 입력란 영역 자체 미노출 (하단 배경 회색 처리).
+                  <b>댓글 없음 (S07)</b>: "첫 댓글을 남겨보세요" 안내 + 입력란 placeholder <b>"첫 댓글 작성하기"</b> (핑크 강조).<br>
+                  <b>댓글 미허용 (S08)</b>: "댓글이 허용되지 않은 게시글입니다." + 입력란 영역 자체 미노출
                 </td>
                 <td>S06–S08</td>
               </tr>
@@ -3461,8 +3458,8 @@
                 <td class="item-name">카테고리<br>선택 UI</td>
                 <td>
                   헤더 하단 첫 영역에 카테고리 칩(chip) 행 노출: <b>건물공지 / 행사·이벤트 / 분실물 / 자유</b>.<br>
-                  칩 미선택 상태(S01): 제목·내용 입력란 비활성(placeholder 회색), 이미지 첨부 비활성, <b>등록 버튼 disabled</b> (회색).<br>
-                  칩 선택 시: 해당 칩 강조(<code style="font-size:9.5px; background:var(--gray-bg); padding:1px 3px;">brand</code> 색), 입력란 활성화, 카테고리 맞춤 placeholder 전환, 등록 버튼 활성화.<br>
+                  칩 미선택 상태(S01): 제목·내용 입력란 비활성, 이미지 첨부 비활성, <b>등록 버튼 disabled</b><br>
+                  칩 선택 시: 해당 칩 강조, 입력란 활성화, 등록 버튼 활성화.<br>
                   <b>건물공지 칩</b>: 일반 구성원에게는 칩 자체를 <b>미노출</b>. 해당 권한은 행사·이벤트·분실물·자유만 선택 가능.
                 </td>
                 <td class="spec-cond">건물공지<br>칩 권한<br>조건부</td>
@@ -3815,7 +3812,7 @@
                   <b>분실물</b> 카테고리 칩 선택 직후, 입력 폼 최상단에 습득 유형 선택 UI 노출.<br>
                   3-way 선택지: <b>A 인포메이션에 맡겼어요</b> / <b>B 발견한 곳에 있어요</b> / <b>C 제가 가지고 있어요</b>.<br>
                   <b>미선택(S04)</b>: 3가지 선택지 전체 노출(라디오). 하위 입력 필드 비활성(회색), 등록 버튼 disabled.<br>
-                  <b>선택 직후(S04-A/B/C)</b>: 선택지 3개가 접혀 숨겨지고, 선택한 유형 1개만 분홍 칩으로 상단에 표시.<br>
+                  <b>선택 직후(S04-A/B/C)</b>: 선택지 3개가 접혀 숨겨지고, 선택한 유형 1개만 상단에 표시.<br>
                   칩 우측 <b>[변경 ›]</b> 탭 → S04(미선택 화면)으로 복귀, 유형 재선택 가능.
                 </td>
                 <td class="spec-cond">단일 선택<br>선택 시 접힘<br>변경 시 펼침</td>
@@ -4227,7 +4224,7 @@
                 <td>
                   이미지 첨부 후 <b>썸네일 가로 목록</b> 표시 (카운터: n / 3).<br>
                   각 썸네일 우상단에 <b>✕ 삭제 버튼</b> 노출 — 탭 시 해당 이미지 즉시 제거, 목록 재정렬, 카운터 갱신.<br>
-                  <b>3장 첨부 완료 시</b>: 추가(+) 버튼 비활성화 (회색 점선, 탭 불가) 및 안내 문구 "최대 3장 · 추가 불가" 노출.<br>
+                  <b>3장 첨부 완료 시</b>: 추가(+) 버튼 비활성화 및 안내 문구 "최대 3장 · 추가 불가" 노출.<br>
                   1장 이상 삭제 시 추가 버튼 즉시 재활성화.
                 </td>
                 <td class="spec-note">최대 3장<br>초과 차단<br>삭제 후<br>재활성</td>
@@ -4496,8 +4493,7 @@
                 <td class="item-name">카테고리 변경 불가</td>
                 <td>
                   카테고리 필드는 <b>읽기 전용</b> 처리. 배지(Badge) 형태로만 표시하며 탭 불가.<br>
-                  🔒 아이콘과 함께 "(변경 불가)" 레이블 노출.<br>
-                  변경 필요 시 기존 글 삭제 후 재작성 유도 (UX 원칙).
+                  
                 </td>
                 <td class="spec-note">readOnly<br>비활성 UI</td>
               </tr>
@@ -4505,8 +4501,8 @@
                 <td>③</td>
                 <td class="item-name">수정 완료 → 01510U 복귀</td>
                 <td>
-                  "수정 완료" 버튼 탭 시 PATCH /posts/{postId} 호출.<br>
-                  성공: 01510U 게시글 상세로 복귀하며 수정된 내용 반영 (캐시 무효화).<br>
+                  "수정 완료" 버튼 탭 시<br>
+                  성공: 01510U 게시글 상세로 복귀하며 수정된 내용 반영.<br>
                   실패: 토스트 "수정에 실패했어요. 잠시 후 다시 시도해주세요." 표시.
                 </td>
                 <td class="spec-note">데이터 수정<br>화면 이동 기록</td>
@@ -4842,7 +4838,7 @@
               <span style="font-size:11px; color:var(--gray-dk);">📢 건물공지</span>
               <span style="font-size:11px; color:var(--gray-dk);">🎉 행사·이벤트</span>
               <span style="font-size:11px; color:var(--gray-dk);">🔍 분실물</span>
-              <span style="font-size:11px; color:var(--gray-dk);">✏️ 자유</span>
+              <span style="font-size:11px; color:var(--gray-dk);"> 자유</span>
             </div>
           </div>
         </div>
@@ -4914,7 +4910,7 @@
         </div>
         <div class="meta-row">
           <span class="meta-label">노출 조건</span>
-          <span class="meta-value" style="font-size:11px; line-height:1.5; color:var(--orange);">구내식당 등록<br>건물만 탭 노출<br>(50.4%)</span>
+          <span class="meta-value" style="font-size:11px; line-height:1.5; color:var(--orange);">구내식당 등록<br>건물만 탭 노출<br></span>
         </div>
         <div class="meta-row">
           <span class="meta-label">기본 활성</span>
@@ -5149,7 +5145,7 @@
                 <td class="item-name">구내식당 탭<br>노출 조건</td>
                 <td>
                   건물톡 메인의 <b>구내식당 탭</b>은 해당 건물에 구내식당이 <b>1개 이상 등록된 경우에만</b> 노출.<br>
-                  미등록 건물 → 탭 자체 미노출 (전국 건물 중 50.4%에 해당).<br>
+                  미등록 건물 → 탭 자체 미노출<br>
                   탭 노출 여부는 건물 단위 설정값으로 제어 (서버 응답 기반).
                 </td>
                 <td class="spec-note">조건부 노출</td>
@@ -5950,7 +5946,7 @@
                 <td class="item-name">식단명 입력<br>(필수)</td>
                 <td>
                   placeholder: <i>"날짜 또는 식단 이름을 입력해주세요"</i><br>
-                  필수 입력. 미입력 시 헤더 <b>등록</b> 버튼 비활성(회색).<br>
+                  필수 입력. 미입력 시 헤더 <b>등록</b> 버튼 비활성.<br>
                   입력 완료 시 등록 버튼 활성(브랜드 핑크).
                 </td>
                 <td>S01–S03</td>
@@ -5969,8 +5965,8 @@
                 <td class="item-name">이미지 첨부</td>
                 <td>
                   최대 <b>5장</b>. 첫 번째 이미지가 목록 썸네일로 사용.<br>
-                  첨부 순서 드래그 변경 가능 (선택 구현, 개발팀 협의).<br>
-                  이미지 없을 경우 플레이스홀더(🍱 아이콘) 노출.
+                  
+                  
                 </td>
                 <td>S01–S03</td>
               </tr>
@@ -6012,8 +6008,7 @@
             <div style="font-size:11px; color:#B71C1C; line-height:1.65;">
               <b style="font-size:12px; display:block; margin-bottom:3px;">건물 관리자·앱 관리자 전용 화면</b>
               일반 구성원: UFMDS01550U(메뉴 목록) 헤더에서 <b>"+ 메뉴 등록" 버튼 자체 미노출</b>이므로 이 화면 진입 불가.<br>
-              직접 URL 접근 시 서버에서 권한 거부(403) 처리.<br>
-              <span style="color:#E57373;">댓글·별점 옵션 기본값(전체 허용 / 허용)은 운영팀과 건물 단위 기본값 설정 여부 협의 필요 (미결 P2).</span>
+              
             </div>
           </div>
         </div>
@@ -6632,8 +6627,8 @@
           <div style="background:#FFF3E0; border:1.5px solid #FFCC80; border-radius:8px; padding:10px 14px; display:flex; gap:10px; align-items:flex-start;">
             <div style="font-size:14px; flex-shrink:0; margin-top:1px;">🔔</div>
             <div style="font-size:11px; color:#E65100; line-height:1.65;">
-              <b style="font-size:12px; display:block; margin-bottom:3px;">신고 접수 → 작성자 Push 알림 정책</b>
-              신고 제출 완료 즉시 게시글 작성자에게 앱 푸시 알림 발송.<br>
+              <b style="font-size:12px; display:block; margin-bottom:3px;">신고 접수 → Push 알림 정책</b>
+              신고 제출 완료 즉시 건물 운영자에게 앱 푸시 알림 발송.<br>
               동일 게시글 재신고(중복): 작성자 알림 추가 발송 여부는 운영팀 정책에 따름 (기본: 중복 알림 차단 권장).<br>
               <span style="color:#BF360C;">자기 게시글 신고 불가 — 더보기 메뉴에서 신고 항목 미노출 처리.</span>
             </div>
@@ -6644,8 +6639,7 @@
             <div style="font-size:14px; flex-shrink:0; margin-top:1px;">⚠️</div>
             <div style="font-size:11px; color:#B71C1C; line-height:1.65;">
               <b style="font-size:12px; display:block; margin-bottom:3px;">중복 신고 처리</b>
-              동일 게시글에 동일 사용자가 재신고 시 서버에서 중복 차단.<br>
-              완료 화면은 동일하게 노출 (서버 응답 구분 없이 UX 통일).<br>
+              동일 게시글에 동일 사용자가 재신고 불가.<br>
               <span style="color:#E57373;">자기 게시글 신고 불가 — 더보기 메뉴에서 신고 항목 미노출 처리.</span>
             </div>
           </div>
@@ -6878,9 +6872,7 @@
                 <td class="item-name">결과 피드 카드</td>
                 <td>
                   카드 구성: <b>카테고리 배지</b> + <b>제목</b>(검색어 하이라이트) + 닉네임 · 시간 · 댓글 수.<br>
-                  분실물 해결됨 게시글: <code style="font-size:10px; background:var(--gray-bg); padding:1px 4px; border-radius:3px;">state-badge.resolved</code> 병기, 제목 회색 처리.<br>
-                  결과 카운트 바: <b>"[검색어]" 검색 결과 N개</b> 상단 고정 노출.<br>
-                  스크롤: 무한 스크롤 (페이지 당 20개).
+                  
                 </td>
                 <td>S01</td>
               </tr>
@@ -6888,7 +6880,7 @@
                 <td>③</td>
                 <td class="item-name">결과 없음<br>Empty State</td>
                 <td>
-                  아이콘 🔍 + 타이틀: <b>"검색 결과가 없어요"</b>.<br>
+                  <b>"검색 결과가 없어요"</b>.<br>
                   서브: "다른 검색어를 입력하거나 카테고리 탭에서 찾아보세요."<br>
                   CTA 버튼 없음 — 검색 바 재입력 유도.
                 </td>
@@ -6922,9 +6914,8 @@
             <div style="font-size:14px; flex-shrink:0; margin-top:1px;">🖍</div>
             <div style="font-size:11px; color:#5D4037; line-height:1.65;">
               <b style="font-size:12px; display:block; margin-bottom:3px;">검색어 하이라이트</b>
-              결과 카드 제목 내 검색어 일치 구간을 <mark style="background:#FFF9C4; border-radius:2px; padding:0 2px;">노란 배경</mark>으로 강조.<br>
-              대소문자·초성 검색 지원 여부는 개발팀 협의.<br>
-              <span style="color:#795548;">검색어 길이 제한: 최대 50자.</span>
+              결과 카드 제목 내 검색어 일치 구간을 강조.<br>
+              
             </div>
           </div>
         </div>
@@ -7098,8 +7089,8 @@
                 <td>
                   정책 전문을 3개 섹션으로 구분하여 노출.<br>
                   <b>도입부</b>: "건물톡은 빌딩 내 입주사 구성원 간의 원활한 정보 공유와 소통을 위한 전용 공간입니다."<br>
-                  <b>1. 준수 사항 및 금지 행위</b>: 상호 존중·비방금지 / 업무방해 금지 / 질서 유지 / 보안 준수 (4개 항목, 적색 헤더)<br>
-                  <b>2. 운영 및 관리 원칙</b>: 이용 대상 / 실명 운영 / 관리 조치 / 책임 한계 (4개 항목, 블루 헤더)<br>
+                  <b>1. 준수 사항 및 금지 행위</b>: 상호 존중·비방금지 / 업무방해 금지 / 질서 유지 / 보안 준수<br>
+                  <b>2. 운영 및 관리 원칙</b>: 이용 대상 / 실명 운영 / 관리 조치 / 책임 한계<br>
                   <b>3. 문의 및 신고</b>: 내정보 &gt; 설정 &gt; 앱이용문의 경로 안내<br>
                   하단: "※ 본 정책은 원활한 서비스 운영을 위해 사전 고지 후 변경될 수 있습니다."
                 </td>
@@ -7152,7 +7143,7 @@
               <b style="font-size:12px; display:block; margin-bottom:3px;">진입 경로 2개 — 화면 이동 기록 정합</b>
               <b>글쓰기 하단 링크 진입</b> → 뒤로가기 → 글쓰기(UFMDS01520U) 복귀. 작성 중이던 내용 유지.<br>
               <b>설정 진입</b> → 뒤로가기 → 설정 화면 복귀.<br>
-              <span style="color:#5A7AB8;">최초 진입 BottomSheet(인터럽트) 없음 — 정책 노출 원칙 준수.</span>
+              
             </div>
           </div>
         </div>
