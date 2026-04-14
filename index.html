@@ -257,44 +257,45 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    padding: 14px 0;
+    padding: 8px 0;
     overflow: hidden;
   }
   .nav-section-label {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     color: rgba(255,255,255,0.25);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 0 14px 8px;
+    padding: 0 10px 5px;
   }
   .nav-item {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
-    padding: 7px 14px;
+    gap: 6px;
+    padding: 4px 10px;
     cursor: pointer;
     transition: background 0.15s;
+    text-decoration: none;
   }
   .nav-item:hover, .nav-item.active {
     background: rgba(58,90,154,0.35);
   }
-  .nav-item.active { border-left: 3px solid var(--brand); padding-left: 11px; }
+  .nav-item.active { border-left: 3px solid var(--brand); padding-left: 7px; }
   .nav-num {
-    width: 22px; height: 22px;
+    width: 18px; height: 18px;
     background: rgba(255,255,255,0.08);
     border-radius: 50%;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: rgba(255,255,255,0.5);
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 1px;
   }
   .nav-item.active .nav-num { background: var(--brand); color: #fff; }
   .nav-text { flex: 1; min-width: 0; }
   .nav-id {
-    font-size: 10px;
+    font-size: 8.5px;
     color: rgba(255,255,255,0.28);
     display: block;
     font-family: 'Courier New', monospace;
@@ -303,7 +304,7 @@
     text-overflow: ellipsis;
   }
   .nav-name {
-    font-size: 12px;
+    font-size: 10.5px;
     color: rgba(255,255,255,0.65);
     font-weight: 500;
     white-space: nowrap;
@@ -314,7 +315,7 @@
   .nav-divider {
     height: 1px;
     background: rgba(255,255,255,0.05);
-    margin: 5px 0;
+    margin: 2px 0;
   }
 
   /* ── Main area ── */
@@ -978,6 +979,8 @@
   }
 
   /* Print */
+  a.nav-item { color: inherit; text-decoration: none; display: flex; }
+  a.nav-item:visited { color: inherit; }
   @media print {
     body { background: #fff; }
     .slide { margin: 0; box-shadow: none; page-break-after: always; }
@@ -1098,8 +1101,92 @@
     </div>
     <div class="cover-dot-item">
       <div class="cover-dot" style="background:#888;"></div>
-      <span class="cover-dot-label">샌디 Talk 탭 전체 삭제 · 건물톡 단일화 확정 (CDO)</span>
+      <span class="cover-dot-label"></span>
     </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE: 목적 요약 (Executive Summary)
+══════════════════════════════════════ -->
+<div class="slide" id="slide-exec-summary" style="display:flex; flex-direction:column;">
+  <div class="slide-header">
+    <div class="breadcrumb">
+      <b>건물톡 화면정의서</b>
+      <span class="sep">›</span>
+      <span>목적 요약</span>
+    </div>
+    <div class="slide-id">Executive Summary</div>
+  </div>
+
+  <div style="flex:1; display:flex; overflow:hidden; background:var(--white);">
+    <!-- Left column: 문제 정의 -->
+    <div style="width:420px; padding:28px 32px; border-right:1px solid var(--gray-lt); display:flex; flex-direction:column; gap:16px; flex-shrink:0;">
+      <div style="font-size:11px; font-weight:700; color:var(--brand); letter-spacing:1.2px; text-transform:uppercase;">문제 정의</div>
+      <div style="font-size:21px; font-weight:900; color:var(--navy); line-height:1.3; letter-spacing:-0.5px;">72.3% 이탈,<br>읽을 것이 없어서</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <!-- Stat 1 -->
+        <div style="background:var(--gray-bg); border-left:3px solid var(--brand); border-radius:0 6px 6px 0; padding:10px 14px;">
+          <div style="font-size:22px; font-weight:900; color:var(--brand); line-height:1;">58,962<span style="font-size:13px; font-weight:600;"> 회/주</span></div>
+          <div style="font-size:11px; color:var(--gray-md); margin-top:2px;">샌디톡 조회수 — 전체 앱의 17.7%, 홈 다음 2위</div>
+        </div>
+        <!-- Stat 2 -->
+        <div style="background:#FFF5F5; border-left:3px solid var(--red); border-radius:0 6px 6px 0; padding:10px 14px;">
+          <div style="font-size:22px; font-weight:900; color:var(--red); line-height:1;">72.3%<span style="font-size:13px; font-weight:600;"> 이탈</span></div>
+          <div style="font-size:11px; color:var(--gray-md); margin-top:2px;">진입자 중 게시글 미클릭 이탈 — 스캔 후 이탈 구조</div>
+        </div>
+        <!-- Stat 3 -->
+        <div style="background:var(--orange-lt); border-left:3px solid var(--orange); border-radius:0 6px 6px 0; padding:10px 14px;">
+          <div style="font-size:13px; font-weight:700; color:var(--orange); line-height:1.4;">"콘텐츠 부족" — NPS 3회차 연속 비추천 상위 불만</div>
+          <div style="font-size:11px; color:var(--gray-md); margin-top:2px;">건물공지 100% · 분실물·자유·이벤트 94% 전 건물 필수 채널 확인</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column: 핵심 방향 + 팀 피드백 -->
+    <div style="flex:1; padding:28px 32px; display:flex; flex-direction:column; gap:16px; overflow:hidden;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue); letter-spacing:1.2px; text-transform:uppercase;">핵심 방향</div>
+      <div style="font-size:17px; font-weight:800; color:var(--navy); line-height:1.4; border-bottom:2px solid var(--brand); padding-bottom:10px;">
+        "건물이 곧 커뮤니티"<br>
+        <span style="font-size:13px; font-weight:500; color:var(--gray-md);">72.3% 빈 탭 이탈을 끊고, 매일 읽을 이유를 만든다</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:7px; flex:1; overflow:hidden;">
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:var(--gray-bg); border-radius:6px;">
+          <span style="font-size:14px; flex-shrink:0; margin-top:1px;">🗑</span>
+          <div><div style="font-size:12px; font-weight:700; color:var(--navy);">샌디 Talk 전면 삭제</div><div style="font-size:11px; color:var(--gray-md);">IA·CDO 방향 확정</div></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:var(--gray-bg); border-radius:6px;">
+          <span style="font-size:14px; flex-shrink:0; margin-top:1px;">🗂</span>
+          <div><div style="font-size:12px; font-weight:700; color:var(--navy);">카테고리 5개로 명확화</div><div style="font-size:11px; color:var(--gray-md);">건물공지 · 행사 · 분실물 · 자유 · 구내식당</div></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:var(--gray-bg); border-radius:6px;">
+          <span style="font-size:14px; flex-shrink:0; margin-top:1px;">🔍</span>
+          <div><div style="font-size:12px; font-weight:700; color:var(--navy);">분실물 3케이스 정책</div><div style="font-size:11px; color:var(--gray-md);">인포메이션 맡김 / 발견 / 소지 중</div></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:var(--gray-bg); border-radius:6px;">
+          <span style="font-size:14px; flex-shrink:0; margin-top:1px;">🛡</span>
+          <div><div style="font-size:12px; font-weight:700; color:var(--navy);">블라인드화 방지</div><div style="font-size:11px; color:var(--gray-md);">익명 미지원 · 비침습 정책 상시 노출</div></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:var(--gray-bg); border-radius:6px;">
+          <span style="font-size:14px; flex-shrink:0; margin-top:1px;">🏠</span>
+          <div><div style="font-size:12px; font-weight:700; color:var(--navy);">홈 연동</div><div style="font-size:11px; color:var(--gray-md);">건물공지 ticker 3개 순환 / 인기글 카테고리 배지 카드</div></div>
+        </div>
+        <!-- Team feedback -->
+        <div style="background:#EFF4FF; border:1.5px solid #C5D8FF; border-radius:8px; padding:10px 14px; margin-top:4px;">
+          <div style="font-size:11px; font-weight:700; color:var(--blue); margin-bottom:5px;">💬 Team Feedback</div>
+          <div style="font-size:11px; color:var(--gray-dk); line-height:1.7;">
+            • 상점 정보 등을 건물공지에 포함<br>
+            • 건물공지 Push 알림 정책 및 개발 필요
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span class="footer-crumb">건물톡 화면정의서 <span class="sep">›</span> <b>목적 요약</b></span>
+    <span class="footer-right">Executive Summary · SD2026-003 · V0.1</span>
   </div>
 </div>
 
@@ -1121,20 +1208,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item active"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item active" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -1239,11 +1326,12 @@
                 </div>
               </div>
               <!-- Bottom Nav -->
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -1317,11 +1405,12 @@
                 </div>
               </div>
               <!-- Bottom Nav -->
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -1380,11 +1469,12 @@
                 <div class="wf-annotation" style="font-size:7.5px;">글쓰기 미노출 (ROLE_USER/FIELD)</div>
               </div>
               <!-- Bottom Nav -->
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -1480,20 +1570,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item active"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item active" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -1566,11 +1656,12 @@
                 </div>
               </div>
               <!-- Bottom Nav -->
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -1632,11 +1723,12 @@
                 </div>
               </div>
               <!-- Bottom Nav -->
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -1770,20 +1862,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item active"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item active" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -1871,11 +1963,12 @@
               <div style="display:flex;justify-content:flex-end;padding:4px 10px;flex-shrink:0;">
                 <div style="width:26px;height:26px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(233,30,140,0.4);"><span style="font-size:14px;color:#fff;font-weight:300;line-height:1;">+</span></div>
               </div>
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -1944,11 +2037,12 @@
               <div style="display:flex;justify-content:flex-end;padding:4px 10px;flex-shrink:0;">
                 <div style="width:26px;height:26px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(233,30,140,0.4);"><span style="font-size:14px;color:#fff;font-weight:300;line-height:1;">+</span></div>
               </div>
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -2016,11 +2110,12 @@
               <div style="display:flex;justify-content:flex-end;padding:4px 10px;flex-shrink:0;">
                 <div style="width:26px;height:26px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(233,30,140,0.4);"><span style="font-size:14px;color:#fff;font-weight:300;line-height:1;">+</span></div>
               </div>
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -2120,20 +2215,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item active"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -2186,13 +2281,10 @@
               <div class="wf-header" style="justify-content:space-between;">
                 <span class="wf-back">‹</span>
                 <span class="wf-header-title" style="flex:1; text-align:center;">게시글</span>
-                <!-- 내 게시글: 수정·삭제 -->
-                <div style="display:flex; gap:8px; flex-shrink:0;">
-                  <span style="font-size:9px; color:var(--blue); font-weight:600;">수정</span>
-                  <span style="font-size:9px; color:var(--red);">삭제</span>
-                </div>
+                <!-- 내 게시글: ⋯ 탭 → 수정/삭제 바텀시트 -->
+                <span style="font-size:14px; color:var(--gray-md); flex-shrink:0;">⋯</span>
               </div>
-              <div style="flex:1; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="flex:1; overflow:hidden; display:flex; flex-direction:column; position:relative;">
                 <!-- 카테고리 + 제목 -->
                 <div style="padding:8px 10px; border-bottom:1px solid var(--gray-lt); flex-shrink:0;">
                   <div style="display:flex; align-items:center; gap:5px; margin-bottom:4px;">
@@ -2202,31 +2294,51 @@
                   <div style="display:flex; align-items:center; gap:6px; margin-top:4px;">
                     <div style="width:16px; height:16px; border-radius:50%; background:var(--brand); flex-shrink:0; display:flex; align-items:center; justify-content:center;"><span style="font-size:7px; color:#fff; font-weight:700;">나</span></div>
                     <span style="font-size:8px; color:var(--gray-md);">김샌디 · 2시간 전</span>
-                    <span style="font-size:8px; color:var(--gray-md); margin-left:auto;">조회 48</span>
                   </div>
                 </div>
                 <!-- 본문 -->
                 <div style="padding:8px 10px; flex-shrink:0; font-size:8.5px; color:var(--gray-dk); line-height:1.6; border-bottom:1px solid var(--gray-lt);">
                   어제부터 B동 엘리베이터 공사가 시작됐는데 언제 끝날지 아시는 분 계신가요?<br>계단 이용 중인데 꽤 불편하네요.
                 </div>
+                <!-- ① 좋아요·댓글·조회·신고·공유 바 -->
+                <div style="padding:5px 10px; border-bottom:1px solid var(--gray-lt); display:flex; align-items:center; flex-shrink:0; gap:6px;">
+                  <span style="font-size:13px; color:var(--brand);">♥</span>
+                  <span style="font-size:7.5px; color:var(--brand); font-weight:700; margin-right:auto;">12</span>
+                  <span style="font-size:7px; color:var(--gray-md);">댓글 4</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--gray-md);">조회 48</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--red); font-weight:600;">신고하기</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--gray-md); display:flex; align-items:center; gap:2px;"><span style="font-size:10px;">🟡</span>공유</span>
+                </div>
                 <!-- 댓글 헤더 -->
-                <div style="padding:5px 10px; font-size:8px; font-weight:700; color:var(--navy); border-bottom:1px solid var(--gray-lt); flex-shrink:0;">
+                <div style="padding:4px 10px; font-size:8px; font-weight:700; color:var(--navy); border-bottom:1px solid var(--gray-lt); flex-shrink:0;">
                   댓글 <span style="color:var(--brand);">4</span>
                 </div>
                 <!-- 댓글 2개 -->
-                <div style="padding:6px 10px; border-bottom:1px solid var(--gray-lt); flex-shrink:0; display:flex; gap:5px;">
-                  <div style="width:18px; height:18px; border-radius:50%; background:var(--gray-lt); flex-shrink:0;"></div>
-                  <div><div style="font-size:7.5px; font-weight:700; color:var(--navy);">이샌디 <span style="font-weight:400; color:var(--gray-md);">· 1시간 전</span></div><div style="font-size:7.5px; color:var(--gray-dk); margin-top:1px;">저도 궁금해요. 관리자님 답변 부탁드려요</div></div>
+                <div style="padding:5px 10px; border-bottom:1px solid var(--gray-lt); flex-shrink:0; display:flex; gap:5px;">
+                  <div style="width:16px; height:16px; border-radius:50%; background:var(--gray-lt); flex-shrink:0;"></div>
+                  <div style="flex:1;"><div style="font-size:7px; font-weight:700; color:var(--navy);">이샌디 <span style="font-weight:400; color:var(--gray-md);">· 1시간 전</span></div><div style="font-size:7px; color:var(--gray-dk); margin-top:1px;">저도 궁금해요. 관리자님 답변 부탁드려요</div></div>
                 </div>
-                <div style="padding:6px 10px; flex-shrink:0; display:flex; gap:5px;">
-                  <div style="width:18px; height:18px; border-radius:50%; background:var(--gray-lt); flex-shrink:0;"></div>
-                  <div><div style="font-size:7.5px; font-weight:700; color:var(--navy);">박샌디 <span style="font-weight:400; color:var(--gray-md);">· 30분 전</span></div><div style="font-size:7.5px; color:var(--gray-dk); margin-top:1px;">3일 더 걸린다고 들었어요</div></div>
+                <div style="padding:5px 10px; flex-shrink:0; display:flex; gap:5px;">
+                  <div style="width:16px; height:16px; border-radius:50%; background:var(--gray-lt); flex-shrink:0;"></div>
+                  <div style="flex:1;"><div style="font-size:7px; font-weight:700; color:var(--navy);">박샌디 <span style="font-weight:400; color:var(--gray-md);">· 30분 전</span></div><div style="font-size:7px; color:var(--gray-dk); margin-top:1px;">3일 더 걸린다고 들었어요</div></div>
                 </div>
                 <div style="flex:1; background:var(--gray-bg);"></div>
-                <!-- 댓글 입력 -->
+                <!-- ② 댓글 입력 + 등록 버튼 -->
                 <div style="padding:5px 8px; border-top:1px solid var(--gray-lt); display:flex; gap:5px; align-items:center; flex-shrink:0;">
-                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:16px; padding:4px 8px; font-size:7.5px; color:var(--gray-md); background:var(--gray-bg);">댓글 입력</div>
-                  <div style="width:22px; height:22px; border-radius:50%; background:var(--brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-size:9px; color:#fff;">▶</span></div>
+                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:16px; padding:4px 8px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글을 입력해주세요</div>
+                  <div style="background:var(--brand); border-radius:6px; padding:3px 7px; font-size:7.5px; font-weight:700; color:#fff; flex-shrink:0;">등록</div>
+                </div>
+                <!-- ③ 내 게시글 ⋯ 바텀시트 (수정/삭제) -->
+                <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.4); border-radius:0 0 14px 14px; display:flex; align-items:flex-end; height:100%; border-radius:14px; z-index:10;">
+                  <div style="background:#fff; border-radius:14px 14px 0 0; width:100%; padding:8px 0 10px;">
+                    <div style="width:30px; height:3px; background:var(--gray-lt); border-radius:2px; margin:0 auto 8px;"></div>
+                    <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--blue); border-bottom:1px solid var(--gray-lt);">✏️ 수정</div>
+                    <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--red); border-bottom:1px solid var(--gray-lt);">🗑 삭제</div>
+                    <div style="padding:8px 14px; font-size:9px; color:var(--gray-md);">취소</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2266,11 +2378,29 @@
                 <div style="padding:8px 10px; flex-shrink:0; font-size:8.5px; color:var(--gray-dk); line-height:1.6; border-bottom:1px solid var(--gray-lt);">
                   인포메이션 데스크에 맡겼어요.<br>검정 장우산 손잡이에 빨간 리본 달려 있습니다.
                 </div>
-                <!-- ⋯ 바텀시트 (펼쳐진 상태 표시) -->
+                <!-- 좋아요·댓글·조회·신고·공유 바 -->
+                <div style="padding:5px 10px; border-bottom:1px solid var(--gray-lt); display:flex; align-items:center; flex-shrink:0; gap:6px;">
+                  <span style="font-size:13px; color:var(--gray-lt);">♡</span>
+                  <span style="font-size:7.5px; color:var(--gray-md); margin-right:auto;">5</span>
+                  <span style="font-size:7px; color:var(--gray-md);">댓글 2</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--gray-md);">조회 92</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--red); font-weight:600;">신고하기</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--gray-md); display:flex; align-items:center; gap:2px;"><span style="font-size:10px;">🟡</span>공유</span>
+                </div>
+                <div style="flex:1; background:var(--gray-bg);"></div>
+                <!-- 댓글 입력 + 등록 버튼 -->
+                <div style="padding:5px 8px; border-top:1px solid var(--gray-lt); display:flex; gap:5px; align-items:center; flex-shrink:0;">
+                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:16px; padding:4px 8px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글을 입력해주세요</div>
+                  <div style="background:var(--gray-lt); border-radius:6px; padding:3px 7px; font-size:7.5px; font-weight:700; color:var(--gray-md); flex-shrink:0;">등록</div>
+                </div>
+                <!-- ⋯ 바텀시트 — 신고하기 버튼 탭 시 표시 (타인 게시글) -->
                 <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.45); border-radius:0 0 14px 14px; display:flex; align-items:flex-end; height:100%; border-radius:14px; z-index:10;">
                   <div style="background:#fff; border-radius:14px 14px 0 0; width:100%; padding:8px 0 10px;">
                     <div style="width:30px; height:3px; background:var(--gray-lt); border-radius:2px; margin:0 auto 8px;"></div>
-                    <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--red); border-bottom:1px solid var(--gray-lt);">🚨 신고하기</div>
+                    <div style="padding:8px 14px; font-size:9px; font-weight:600; color:var(--red); border-bottom:1px solid var(--gray-lt);">🚨 신고하기 → UFMDS01580U 진입</div>
                     <div style="padding:8px 14px; font-size:9px; color:var(--gray-md);">취소</div>
                   </div>
                 </div>
@@ -2328,10 +2458,20 @@
                   <div style="width:18px; height:18px; border-radius:50%; background:var(--gray-lt); flex-shrink:0;"></div>
                   <div><div style="font-size:7.5px; font-weight:700; color:var(--navy);">김샌디 <span style="font-weight:400; color:var(--gray-md);">· 어제</span></div><div style="font-size:7.5px; color:var(--gray-dk); margin-top:1px;">알려주셔서 감사해요!</div></div>
                 </div>
+                <!-- 좋아요·신고·공유 바 -->
+                <div style="padding:5px 10px; border-bottom:1px solid var(--gray-lt); display:flex; align-items:center; flex-shrink:0; gap:6px;">
+                  <span style="font-size:13px; color:var(--gray-lt);">♡</span>
+                  <span style="font-size:7.5px; color:var(--gray-md); margin-right:auto;">0</span>
+                  <span style="font-size:7px; color:var(--gray-md);">댓글 2</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--gray-md);">조회 318</span>
+                  <span style="font-size:7px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:7px; color:var(--gray-md); display:flex; align-items:center; gap:2px;"><span style="font-size:10px;">🟡</span>공유</span>
+                </div>
                 <div style="flex:1; background:var(--gray-bg);"></div>
                 <div style="padding:5px 8px; border-top:1px solid var(--gray-lt); display:flex; gap:5px; align-items:center; flex-shrink:0;">
-                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:16px; padding:4px 8px; font-size:7.5px; color:var(--gray-md); background:var(--gray-bg);">댓글 입력</div>
-                  <div style="width:22px; height:22px; border-radius:50%; background:var(--brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-size:9px; color:#fff;">▶</span></div>
+                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:16px; padding:4px 8px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글을 입력해주세요</div>
+                  <div style="background:var(--gray-lt); border-radius:6px; padding:3px 7px; font-size:7.5px; font-weight:700; color:var(--gray-md); flex-shrink:0;">등록</div>
                 </div>
               </div>
             </div>
@@ -2355,54 +2495,67 @@
             <tbody>
               <tr>
                 <td>①</td>
-                <td class="item-name">수정·삭제<br>노출 조건</td>
+                <td class="item-name">더보기 메뉴(⋯)<br>구성</td>
                 <td>
-                  <b>본인 게시글</b>: 헤더 우측 수정 / 삭제 텍스트 버튼 노출 (S01).<br>
-                  <b>건물공지</b>: ROLE_MANAGER·ADMIN만 수정·삭제 노출. ROLE_USER·FIELD는 미노출.<br>
-                  삭제 탭 시 확인 다이얼로그 → 확인 시 삭제 후 목록 복귀.
+                  헤더 우측 ⋯ 버튼 탭 → 바텀시트.<br>
+                  <b>내 게시글</b>: ✏️ 수정 / 🗑 삭제 (S01 와이어프레임 바텀시트 참조).<br>
+                  <b>타인 게시글</b>: 🚨 신고하기만 노출 (S02).<br>
+                  삭제 탭 → 확인 팝업 → 확인 시 삭제 후 목록 복귀.<br>
+                  <b>건물공지</b>(ROLE_MANAGER·ADMIN): ✏️ 수정 / 🗑 삭제.
                 </td>
-                <td>S01/S03</td>
+                <td>S01/S02<br>S03</td>
               </tr>
               <tr>
                 <td>②</td>
-                <td class="item-name">신고 버튼<br>노출 조건</td>
+                <td class="item-name">게시글 하단<br>좋아요·신고·공유 바</td>
                 <td>
-                  <b>타인 게시글</b>: 헤더 우측 ⋯ 탭 시 바텀시트 → <b>"신고하기"</b> 단일 메뉴 노출 (S02).<br>
-                  <b>본인 게시글</b>: ⋯ 미노출 (수정·삭제 텍스트로 대체).<br>
-                  신고 탭 시 UFMDS01580U 진입.
+                  게시글 본문 바로 아래 가로 바 노출:<br>
+                  <b>좌측</b>: ♥ 좋아요 아이콘 + 좋아요 수 (탭 시 토글).<br>
+                  <b>우측</b>: 댓글 수 • 조회 수 • <span style="color:var(--red);">신고하기</span> • <span style="color:var(--gray-md);">🟡공유하기</span> 순 나열.<br>
+                  <b>신고하기</b> 탭 시: 바텀시트 → "🚨 신고하기 → 신고화면(01580U) 진입" (S02 이미지 참조).<br>
+                  <b>공유하기</b>: 카카오톡 공유 연동.
                 </td>
-                <td>S02</td>
+                <td>S01/S02</td>
               </tr>
               <tr>
                 <td>③</td>
-                <td class="item-name">건물공지<br>핀 배지 스타일</td>
+                <td class="item-name">댓글 입력<br>등록·수정 버튼</td>
                 <td>
-                  헤더: 네이비 배경 + 흰색 텍스트 (일반 게시글 헤더와 시각적 구분).<br>
-                  제목 상단: 📌 아이콘 + <code style="font-size:10px; background:var(--gray-bg); padding:1px 4px; border-radius:3px;">state-badge.notice</code> "[공지]" 배지 병기.<br>
-                  제목 영역 배경: 옅은 블루(<code style="font-size:10px; background:var(--gray-bg); padding:1px 4px; border-radius:3px;">#EFF4FF</code>) 처리.
-                </td>
-                <td>S03</td>
-              </tr>
-              <tr>
-                <td>④</td>
-                <td class="item-name">딥링크 진입<br>뒤로가기</td>
-                <td>
-                  <b>건물톡 목록 → 상세</b>: 뒤로가기 시 목록 복귀 · 탭 선택 및 스크롤 위치 유지.<br>
-                  <b>홈 ticker → 상세</b>: 뒤로가기 → 홈 복귀.<br>
-                  <b>홈 인기글 카드 → 상세</b>: 뒤로가기 → 홈 복귀.<br>
-                  <b>검색 결과(01590U) → 상세</b>: 뒤로가기 → 검색 결과 복귀 (검색어·스크롤 유지).
+                  댓글 입력란 오른쪽에 <b>[등록]</b> 버튼 노출 (기본).<br>
+                  내 댓글 수정 모드 진입 시 버튼 텍스트 → <b>[수정]</b> 으로 전환.<br>
+                  입력 없이 탭 시: 버튼 비활성(회색). 1자 이상 입력 시 활성(핑크).
                 </td>
                 <td>S01–S03</td>
               </tr>
               <tr>
-                <td>⑤</td>
-                <td class="item-name">분실물<br>상태 변경</td>
+                <td>④</td>
+                <td class="item-name">건물공지<br>핀 배지 스타일</td>
                 <td>
-                  분실물 게시글 상세에서만 노출: <b>"해결됨으로 변경"</b> 버튼 (작성자만).<br>
-                  전환 시: 배지 → <code style="font-size:10px; background:var(--gray-bg); padding:1px 4px; border-radius:3px;">state-badge.resolved</code> + 목록 피드 하단 이동 + 흐림 처리.<br>
-                  해결됨 → 찾는중 역전환 불가.
+                  헤더: 네이비 배경 + 흰색 텍스트 (일반 헤더와 시각 구분).<br>
+                  제목 상단: 📌 아이콘 + [공지] 배지 병기. 제목 영역 배경 #EFF4FF 처리.
                 </td>
-                <td class="spec-note">분실물<br>게시글만</td>
+                <td>S03</td>
+              </tr>
+              <tr>
+                <td>⑤</td>
+                <td class="item-name">뒤로가기<br>화면 복귀</td>
+                <td>
+                  <b>건물톡 목록 → 상세</b>: 목록 복귀 · 탭 선택·스크롤 위치 유지.<br>
+                  <b>홈 ticker / 인기글 카드 → 상세</b>: 홈 복귀.<br>
+                  <b>검색 결과 → 상세</b>: 검색 결과 복귀 (검색어 유지).
+                </td>
+                <td>S01–S03</td>
+              </tr>
+              <tr>
+                <td>⑥</td>
+                <td class="item-name">분실물<br>해결됨 표시</td>
+                <td>
+                  분실물 게시글: 제목 옆 배지가 <b>[찾는중]</b>(주황) → <b>[해결됨]</b>(회색)으로 전환됨을 목록에서 표시.<br>
+                  상세 화면에서는 배지 색상 변경 + 본문 영역 흐림 처리(opacity 0.5).<br>
+                  단방향 전환 — 해결됨 → 찾는중 복구 불가.<br>
+                  <span style="color:var(--red);">버튼 별도 노출 없음</span> — 상태 변경은 글 수정(UFMDS01530U)을 통해 처리.
+                </td>
+                <td class="spec-note">분실물만<br>S04/S05</td>
               </tr>
             </tbody>
           </table>
@@ -2459,20 +2612,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item active"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -2530,14 +2683,20 @@
                 <div style="padding:6px 8px; font-size:7.5px; color:var(--gray-dk); line-height:1.5; border-bottom:1px solid var(--gray-lt); flex-shrink:0;">
                   인포메이션에 맡겼어요. 검정 장우산입니다.
                 </div>
-                <!-- 상태 변경 버튼 (작성자만) -->
-                <div style="padding:5px 8px; flex-shrink:0;">
-                  <div style="border:1.5px solid var(--green); border-radius:6px; padding:4px 6px; text-align:center; font-size:7.5px; font-weight:700; color:var(--green);">✓ 해결됨으로 변경</div>
+                <!-- 좋아요·신고·공유 바 -->
+                <div style="padding:4px 8px; border-bottom:1px solid var(--gray-lt); display:flex; align-items:center; flex-shrink:0; gap:5px;">
+                  <span style="font-size:11px; color:var(--brand);">♥</span>
+                  <span style="font-size:7px; color:var(--brand); margin-right:auto;">3</span>
+                  <span style="font-size:6.5px; color:var(--gray-md);">댓글 1</span>
+                  <span style="font-size:6.5px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:6.5px; color:var(--red);">신고</span>
+                  <span style="font-size:6.5px; color:var(--gray-lt);">•</span>
+                  <span style="font-size:6.5px; color:var(--gray-md);">🟡공유</span>
                 </div>
                 <div style="flex:1; background:var(--gray-bg);"></div>
                 <div style="padding:4px 6px; border-top:1px solid var(--gray-lt); flex-shrink:0; display:flex; gap:4px;">
-                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글 입력</div>
-                  <div style="width:18px; height:18px; border-radius:50%; background:var(--brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-size:8px; color:#fff;">▶</span></div>
+                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글을 입력해주세요</div>
+                  <div style="background:var(--brand); border-radius:5px; padding:2px 6px; font-size:7px; font-weight:700; color:#fff; flex-shrink:0;">등록</div>
                 </div>
               </div>
             </div>
@@ -2568,14 +2727,14 @@
                 <div style="padding:6px 8px; font-size:7.5px; color:var(--gray-md); line-height:1.5; border-bottom:1px solid var(--gray-lt); flex-shrink:0;">
                   인포메이션에 맡겼어요. 검정 장우산입니다.
                 </div>
-                <!-- 해결됨 전환 안내 배너 -->
-                <div style="margin:5px 8px; background:var(--green-lt); border:1px solid #A5D6A7; border-radius:6px; padding:4px 6px; font-size:7px; color:var(--green); text-align:center; flex-shrink:0; font-weight:700;">
-                  ✓ 해결된 게시글입니다
+                <!-- 해결됨: 배지 회색 전환 + 흐림 처리 -->
+                <div style="margin:5px 8px; background:var(--gray-bg); border:1px solid var(--gray-lt); border-radius:6px; padding:4px 6px; font-size:7px; color:var(--gray-md); text-align:center; flex-shrink:0;">
+                  분실물 상태: 해결됨 (배지 회색 전환)
                 </div>
                 <div style="flex:1; background:var(--gray-bg);"></div>
                 <div style="padding:4px 6px; border-top:1px solid var(--gray-lt); flex-shrink:0; display:flex; gap:4px;">
-                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글 입력</div>
-                  <div style="width:18px; height:18px; border-radius:50%; background:var(--gray-lt); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-size:8px; color:var(--gray-md);">▶</span></div>
+                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글을 입력해주세요</div>
+                  <div style="background:var(--gray-lt); border-radius:5px; padding:2px 6px; font-size:7px; font-weight:700; color:var(--gray-md); flex-shrink:0;">등록</div>
                 </div>
               </div>
             </div>
@@ -2618,8 +2777,8 @@
                 </div>
                 <div style="flex:1; background:var(--gray-bg);"></div>
                 <div style="padding:4px 6px; border-top:1px solid var(--gray-lt); flex-shrink:0; display:flex; gap:4px;">
-                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글 입력</div>
-                  <div style="width:18px; height:18px; border-radius:50%; background:var(--brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-size:8px; color:#fff;">▶</span></div>
+                  <div style="flex:1; border:1px solid var(--gray-lt); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--gray-md); background:var(--gray-bg);">댓글을 입력해주세요</div>
+                  <div style="background:var(--brand); border-radius:5px; padding:2px 6px; font-size:7px; font-weight:700; color:#fff; flex-shrink:0;">등록</div>
                 </div>
               </div>
             </div>
@@ -2653,8 +2812,8 @@
                   <span style="font-size:7.5px; color:var(--gray-md); text-align:center; line-height:1.5;">첫 댓글을 남겨보세요</span>
                 </div>
                 <div style="padding:4px 6px; border-top:1px solid var(--gray-lt); flex-shrink:0; display:flex; gap:4px;">
-                  <div style="flex:1; border:1px solid var(--brand); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--brand); background:var(--brand-lt); font-weight:600;">첫 댓글 작성하기</div>
-                  <div style="width:18px; height:18px; border-radius:50%; background:var(--brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-size:8px; color:#fff;">▶</span></div>
+                  <div style="flex:1; border:1px solid var(--brand); border-radius:12px; padding:3px 6px; font-size:7px; color:var(--brand); background:var(--brand-lt); font-weight:600;">첫 댓글을 남겨보세요</div>
+                  <div style="background:var(--brand); border-radius:5px; padding:2px 6px; font-size:7px; font-weight:700; color:#fff; flex-shrink:0;">등록</div>
                 </div>
               </div>
             </div>
@@ -2724,23 +2883,13 @@
               </tr>
               <tr>
                 <td>②</td>
-                <td class="item-name">상태 변경<br>버튼 노출</td>
+                <td class="item-name">해결됨<br>상태 처리</td>
                 <td>
-                  <b>"✓ 해결됨으로 변경"</b> 버튼: <b>분실물 게시글 작성자 본인</b>에게만 노출 (S04).<br>
-                  이미 해결됨 전환 완료 시: 버튼 미노출 → "✓ 해결된 게시글입니다" 배너로 대체 (S05).<br>
-                  타인 분실물 게시글: 상태 변경 버튼 미노출.
+                  분실물 게시글의 "해결됨" 처리는 <b>별도 버튼 없이 글 수정(UFMDS01530U)</b>을 통해 변경.<br>
+                  해결됨 전환 후 상세 화면: 배지 [찾는중](주황) → [해결됨](회색), 본문 영역 opacity 0.5 흐림.<br>
+                  목록 피드: 해당 카드 피드 하단 이동 + opacity 0.55 흐림 처리. 댓글 입력은 유지.
                 </td>
                 <td>S04/S05</td>
-              </tr>
-              <tr>
-                <td>③</td>
-                <td class="item-name">해결됨<br>시각 처리</td>
-                <td>
-                  상세 화면: 본문 영역 <b>opacity 0.5 흐림 처리</b> + 녹색 "✓ 해결된 게시글입니다" 배너 노출.<br>
-                  목록 피드: 해당 카드 <b>피드 하단으로 이동</b> + 카드 자체 opacity 0.55 흐림.<br>
-                  댓글 입력은 유지 (해결됨 후에도 댓글 허용).
-                </td>
-                <td>S05</td>
               </tr>
               <tr>
                 <td>④</td>
@@ -2813,20 +2962,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item active"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -3129,20 +3278,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item active"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -3462,20 +3611,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item active"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -3711,11 +3860,12 @@
                 </div>
               </div>
               <!-- Bottom Nav -->
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">VOC</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
               <!-- Toast (등록 완료) -->
               <div style="position:absolute;bottom:62px;left:10px;right:10px;background:rgba(26,26,46,0.88);color:#fff;border-radius:8px;padding:7px 12px;font-size:7.5px;font-weight:600;text-align:center;z-index:10;">게시글이 등록되었습니다.</div>
@@ -3816,20 +3966,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item active"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -4082,20 +4232,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item active"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -4161,11 +4311,12 @@
                 <div class="empty-state-desc" style="font-size:10px;">우리 건물 이야기를 시작해보세요!</div>
                 <div class="empty-state-cta" style="font-size:11px; padding:6px 16px;">글 작성하기</div>
               </div>
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">식당</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -4201,11 +4352,12 @@
                 <div class="empty-state-icon">📢</div>
                 <div class="empty-state-title" style="font-size:12px; line-height:1.5;">아직 등록된 공지가 없어요.</div>
               </div>
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">식당</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -4242,11 +4394,12 @@
                 <div class="empty-state-desc" style="font-size:10px;">찾는 물건이 있다면 올려보세요!</div>
                 <div class="empty-state-cta" style="font-size:11px; padding:6px 16px;">글 작성하기</div>
               </div>
-              <div class="wf-bottom-nav">
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">홈</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active">건물톡</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">식당</span></div>
-                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label">MY</span></div>
+                            <div class="wf-bottom-nav">
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">전체서비스</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">불편신고</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">홈</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon"></div><span class="wf-bnav-label" style="font-size:5.5px;">히스토리</span></div>
+                <div class="wf-bnav-item"><div class="wf-bnav-icon active"></div><span class="wf-bnav-label active" style="font-size:5.5px;">건물톡</span></div>
               </div>
             </div>
           </div>
@@ -4353,20 +4506,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item active"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item active" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -4688,20 +4841,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item active"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -5045,20 +5198,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item active"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -5421,20 +5574,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item active"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -5731,20 +5884,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item active"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item active" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -5942,8 +6095,29 @@
                 </td>
                 <td>S01/S02</td>
               </tr>
+              <tr>
+                <td>⑥</td>
+                <td class="item-name">신고 접수 후<br>작성자 알림</td>
+                <td>
+                  신고가 접수되면 <b>글 작성자에게 앱 푸시 알림(Push)</b>이 발송됩니다.<br>
+                  알림 내용 예시: <i>"회원님의 게시글이 신고되었습니다. 운영 정책을 확인해주세요."</i><br>
+                  알림 탭 시 해당 게시글 상세(UFMDS01510U)로 이동.
+                </td>
+                <td class="spec-cond">Push 알림<br>작성자 수신</td>
+              </tr>
             </tbody>
           </table>
+
+          <!-- Push 알림 callout -->
+          <div style="background:#FFF3E0; border:1.5px solid #FFCC80; border-radius:8px; padding:10px 14px; display:flex; gap:10px; align-items:flex-start;">
+            <div style="font-size:14px; flex-shrink:0; margin-top:1px;">🔔</div>
+            <div style="font-size:11px; color:#E65100; line-height:1.65;">
+              <b style="font-size:12px; display:block; margin-bottom:3px;">신고 접수 → 작성자 Push 알림 정책</b>
+              신고 제출 완료 즉시 게시글 작성자에게 앱 푸시 알림 발송.<br>
+              동일 게시글 재신고(중복): 작성자 알림 추가 발송 여부는 운영팀 정책에 따름 (기본: 중복 알림 차단 권장).<br>
+              <span style="color:#BF360C;">자기 게시글 신고 불가 — 더보기 메뉴에서 신고 항목 미노출 처리.</span>
+            </div>
+          </div>
 
           <!-- Flow callout -->
           <div style="background:#FFF5F5; border:1.5px solid #FFCDD2; border-radius:8px; padding:10px 14px; display:flex; gap:10px; align-items:flex-start;">
@@ -5983,20 +6157,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item active"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -6241,20 +6415,20 @@
     <!-- Left Nav -->
     <div class="slide-nav">
       <div class="nav-section-label">화면 목록</div>
-      <div class="nav-item"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></div>
-      <div class="nav-item"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></div>
-      <div class="nav-item"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01500U"><div class="nav-num">1</div><div class="nav-text"><span class="nav-id">UFMDS01500U</span><span class="nav-name">건물톡 메인</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01510U"><div class="nav-num">2</div><div class="nav-text"><span class="nav-id">UFMDS01510U</span><span class="nav-name">게시글 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01520U"><div class="nav-num">3</div><div class="nav-text"><span class="nav-id">UFMDS01520U</span><span class="nav-name">글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01530U"><div class="nav-num">4</div><div class="nav-text"><span class="nav-id">UFMDS01530U</span><span class="nav-name">글수정</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01540U"><div class="nav-num">5</div><div class="nav-text"><span class="nav-id">UFMDS01540U</span><span class="nav-name">Empty State</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></div>
-      <div class="nav-item"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></div>
-      <div class="nav-item"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></div>
-      <div class="nav-item"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01550U"><div class="nav-num">6</div><div class="nav-text"><span class="nav-id">UFMDS01550U</span><span class="nav-name">구내식당 메뉴 목록</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01560U"><div class="nav-num">7</div><div class="nav-text"><span class="nav-id">UFMDS01560U</span><span class="nav-name">구내식당 메뉴 상세</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01565U"><div class="nav-num">8</div><div class="nav-text"><span class="nav-id">UFMDS01565U</span><span class="nav-name">구내식당 메뉴 글쓰기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01570U"><div class="nav-num">9</div><div class="nav-text"><span class="nav-id">UFMDS01570U</span><span class="nav-name">구내식당 리뷰 목록</span></div></a>
       <div class="nav-divider"></div>
-      <div class="nav-item"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></div>
-      <div class="nav-item"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></div>
-      <div class="nav-item active"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></div>
+      <a class="nav-item" href="#slide-UFMDS01580U"><div class="nav-num">10</div><div class="nav-text"><span class="nav-id">UFMDS01580U</span><span class="nav-name">신고하기</span></div></a>
+      <a class="nav-item" href="#slide-UFMDS01590U"><div class="nav-num">11</div><div class="nav-text"><span class="nav-id">UFMDS01590U</span><span class="nav-name">검색 결과</span></div></a>
+      <a class="nav-item active" href="#slide-UFMDS01600U"><div class="nav-num">12</div><div class="nav-text"><span class="nav-id">UFMDS01600U</span><span class="nav-name">이용정책 전문</span></div></a>
     </div>
 
     <!-- Main -->
@@ -6313,36 +6487,41 @@
                 <span class="wf-header-title">이용정책</span>
               </div>
               <!-- Policy body -->
-              <div class="wf-body" style="gap:8px; overflow-y:auto;">
-                <div style="font-size:9px; font-weight:800; color:var(--navy); line-height:1.4;">건물톡 이용 정책</div>
-                <div style="font-size:8px; color:var(--gray-md); line-height:1.6;">건물톡은 같은 건물 구성원 간 정보 공유와 소통을 위한 공간입니다.</div>
+              <div class="wf-body" style="gap:6px; overflow-y:auto;">
+                <div style="font-size:9px; font-weight:800; color:var(--navy); line-height:1.4;">[SANDI] 건물톡 이용 정책</div>
+                <div style="font-size:7.5px; color:var(--gray-md); line-height:1.6;">건물톡은 빌딩 내 입주사 구성원 간의 원활한 정보 공유와 소통을 위한 전용 공간입니다. 쾌적한 커뮤니티 환경을 위해 아래의 운영 정책을 확인해 주세요.</div>
 
                 <div class="wf-divider"></div>
 
-                <div style="font-size:8.5px; font-weight:800; color:var(--red);">금지 행위</div>
-                <div style="font-size:8px; color:var(--gray-dk); line-height:1.8; padding-left:8px;">
-                  • 욕설·비방·혐오 표현<br>
-                  • 특정인 신상 공개 또는 명예 훼손<br>
-                  • 영리 목적 광고·홍보<br>
-                  • 허위 사실 유포<br>
-                  • 음란·폭력적 콘텐츠
+                <div style="font-size:8px; font-weight:800; color:var(--red);">1. 준수 사항 및 금지 행위</div>
+                <div style="font-size:7.5px; color:var(--gray-dk); line-height:1.75; padding-left:6px;">
+                  <b>상호 존중 및 비방 금지:</b> 특정 개인이나 입주사를 비난할 목적으로 사실 혹은 허위 사실을 게시하여 명예를 훼손하는 행위는 엄격히 금지됩니다.<br>
+                  <b>업무 방해 금지:</b> 입주사 간 갈등 조장 또는 비즈니스 활동을 저해하는 내용은 삭제 및 이용 제한 대상입니다.<br>
+                  <b>질서 유지:</b> 확인되지 않은 사실 유포, 타 입주사 업무 방해 게시물은 제한될 수 있습니다.<br>
+                  <b>보안 준수:</b> 빌딩 보안 사항, 타인의 저작권·개인정보를 보호해 주세요.
                 </div>
 
                 <div class="wf-divider"></div>
 
-                <div style="font-size:8.5px; font-weight:800; color:var(--blue);">운영 원칙</div>
-                <div style="font-size:8px; color:var(--gray-dk); line-height:1.8; padding-left:8px;">
-                  • 건물 내 구성원만 게시 가능<br>
-                  • 실명(닉네임) 표시 — 익명 미지원<br>
-                  • 정책 위반 시 삭제 및 이용 제한<br>
-                  • 반복 신고 미해결 시 카카오톡 채널 문의
+                <div style="font-size:8px; font-weight:800; color:var(--blue);">2. 운영 및 관리 원칙</div>
+                <div style="font-size:7.5px; color:var(--gray-dk); line-height:1.75; padding-left:6px;">
+                  <b>이용 대상:</b> SANDI App을 통해 인증을 완료한 해당 빌딩 입주사 임직원만 이용 가능합니다.<br>
+                  <b>실명 운영:</b> 투명한 소통을 위해 익명 기능은 지원하지 않으며, 등록된 닉네임으로 표시됩니다.<br>
+                  <b>관리 조치:</b> 정책 위반 시 게시물은 예고 없이 삭제될 수 있으며, 누적 위반 시 서비스 이용이 단계적으로 제한됩니다.<br>
+                  <b>책임 한계:</b> 게시물을 통해 발생한 구성원 간의 분쟁이나 거래 문제에 대해 회사는 법적 책임을 지지 않습니다.
                 </div>
 
                 <div class="wf-divider"></div>
 
-                <div style="font-size:7.5px; color:var(--gray-md); line-height:1.5; margin-top:2px;">
-                  문의: 카카오톡 채널 '샌디'<br>
-                  <span style="color:var(--gray-lt);">정책은 사전 고지 없이 변경될 수 있습니다.</span>
+                <div style="font-size:8px; font-weight:800; color:var(--navy);">3. 문의 및 신고</div>
+                <div style="font-size:7.5px; color:var(--gray-dk); line-height:1.75; padding-left:6px;">
+                  정책 위반 신고나 이용 문의는 내정보 &gt; 설정(상단 톱니바퀴) &gt; 앱이용문의를 통해 접수해 주세요.
+                </div>
+
+                <div class="wf-divider"></div>
+
+                <div style="font-size:7px; color:var(--gray-md); line-height:1.5; margin-top:2px;">
+                  ※ 본 정책은 원활한 서비스 운영을 위해 사전 고지 후 변경될 수 있습니다.
                 </div>
               </div>
             </div>
@@ -6367,11 +6546,12 @@
                 <td>①</td>
                 <td class="item-name">이용정책 전문 텍스트</td>
                 <td>
-                  정책 전문을 섹션 구분하여 노출.<br>
-                  <b>도입부</b>: "건물톡은 같은 건물 구성원 간…" 문장 1줄.<br>
-                  <b>[금지 행위]</b> 섹션: 불릿 5개.<br>
-                  <b>[운영 원칙]</b> 섹션: 불릿 4개.<br>
-                  각 섹션 헤더는 Bold 처리, 금지 행위는 적색 강조.
+                  정책 전문을 3개 섹션으로 구분하여 노출.<br>
+                  <b>도입부</b>: "건물톡은 빌딩 내 입주사 구성원 간의 원활한 정보 공유와 소통을 위한 전용 공간입니다."<br>
+                  <b>1. 준수 사항 및 금지 행위</b>: 상호 존중·비방금지 / 업무방해 금지 / 질서 유지 / 보안 준수 (4개 항목, 적색 헤더)<br>
+                  <b>2. 운영 및 관리 원칙</b>: 이용 대상 / 실명 운영 / 관리 조치 / 책임 한계 (4개 항목, 블루 헤더)<br>
+                  <b>3. 문의 및 신고</b>: 내정보 &gt; 설정 &gt; 앱이용문의 경로 안내<br>
+                  하단: "※ 본 정책은 원활한 서비스 운영을 위해 사전 고지 후 변경될 수 있습니다."
                 </td>
                 <td class="spec-note">정적 텍스트<br>CMS 관리</td>
               </tr>
@@ -6396,13 +6576,12 @@
               </tr>
               <tr>
                 <td>④</td>
-                <td class="item-name">문의 안내</td>
+                <td class="item-name">문의 및 신고<br>안내</td>
                 <td>
-                  정책 본문 하단에 고정 문구 노출:<br>
-                  <i>"반복 신고 미해결 시 카카오톡 채널 '샌디'로 문의해주세요."</i><br>
-                  카카오톡 채널 딥링크 연결 여부는 개발팀 협의.
+                  정책 3섹션 하단에 문의 경로 안내:<br>
+                  <i>"정책 위반 신고나 이용 문의는 내정보 &gt; 설정(상단 톱니바퀴) &gt; 앱이용문의를 통해 접수해 주시기 바랍니다."</i>
                 </td>
-                <td class="spec-note">카카오 딥링크<br>협의 필요</td>
+                <td class="spec-note">앱 내<br>문의 경로</td>
               </tr>
               <tr>
                 <td>⑤</td>
